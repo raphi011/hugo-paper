@@ -7,7 +7,6 @@
 
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
-@custom-variant dark (@media (prefers-color-scheme: dark));
 
 @theme {
   --w: calc(680px + 32px * 2);
