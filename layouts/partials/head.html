@@ -12,6 +12,7 @@
   </title>
 
   <!-- meta -->
+  <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" />
 
   <!-- author -->
@@ -112,4 +113,9 @@
   <link rel="canonical" href="{{- .Permalink -}}" />
   {{- end -}}
   <!---->
+
+  <!-- custom head -->
+  {{- if templates.Exists "partials/custom-head.html" -}}
+  {{- partial "custom-head.html" . -}}
+  {{- end -}}
 </head>
