@@ -36,10 +36,13 @@
     });
 
     // dark theme
-    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const metaThemes = document.querySelectorAll('meta[name="theme-color"]');
     const lightBg = '{{- $bg_color -}}'.replace(/"/g, '');
     const setDark = (isDark) => {
-      metaTheme.setAttribute('content', isDark ? '#262626' : lightBg);
+      // Update all theme-color meta tags
+      metaThemes.forEach(meta => {
+        meta.setAttribute('content', isDark ? '#262626' : lightBg);
+      });
       htmlClass[isDark ? 'add' : 'remove']('dark');
       localStorage.setItem('dark', isDark);
     };
